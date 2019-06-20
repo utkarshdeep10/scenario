@@ -1,0 +1,56 @@
+<% include partials/header %>
+<div class="container">
+    <div class="row  justify-content-center">
+        <div class="col-md-10">
+            <div class="card mb-4">
+                
+                <img src= "<%= products.image %>" width="100%" class="rounded">
+                
+                    <div class="card-body pt-2 ml-0">
+                        <h6 class="card-title mb-0" style="font-weight: 700;"> <%= products.name %> </h6>
+                        <h6><em>Added By: <%= products.author.username %></em></h6>
+                        <p class="lead"><%= products.content %></p>
+                    <% if(currentUser && products.author.id.equals(currentUser._id)) { %>
+                    <a href="/main/<%= products._id %>/edit" class="btn btn-sm btn-warning p-1">Edit</a>
+                    <form action="/main/<%= products._id %>?_method=DELETE" method="POST" style="display: inline">
+                        <button class="btn btn-sm btn-danger p-1">Delete</button>
+                    </form>
+                    <% } %>  
+                    
+                    </div>  
+            </div>
+            <div class="card p-2 mb-3">
+                    <h2 class="page-header">Reviews</h2>
+                    <form action="/main/<%= products._id %>/comments" method="POST">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name=comment[text] placeholder="Add a Review">
+                        <span class="input-group-btn">
+                            <button class="btn btn-md ml-1 btn-info">Submit</button>
+                        </span>
+                    </div> 
+                    </form>
+                <p>
+                <% products.comments.forEach(function(comm) { %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><%= comm.author.username %>:</strong>
+                            <%= comm.text %>
+                            <% if(currentUser && comm.author.id.equals(currentUser._id)) { %>
+                            <div class="float-right">
+                                <form action="/main/<%= products._id %>/comments/<%= comm._id %>?_method=DELETE" method="POST" class="pull-right" style="display:inline-block">
+                                    <button class="btn btn-default btn-sm p-0 mb-1">Delete</button>
+                                </form>
+                            </div>
+                            <% } %>                     
+                        </div>
+                    </div>    
+                <% }) %>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include partials/footer %>
+

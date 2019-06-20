@@ -1,0 +1,24 @@
+.jumbotron{
+    background-color: white;
+}
+
+.jumbotron-heading{
+    font-size: 6rem;
+    color: #2c5364
+}
+
+.display-4{
+    font-family: Georgia;
+}
+
+hr{
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+.card-img-top{
+    width: 100%;
+    height: 14vw;
+    object-fit: cover;
+}

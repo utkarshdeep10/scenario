@@ -1,0 +1,30 @@
+<% include partials/header %>
+
+<div class="container">
+<section class="jumbotron text-center">
+    <div class="container">
+      <strong><h1 class="jumbotron-heading" style="font-family: 'Baloo Da', cursive;">Welcome to Scenario</h1></strong>
+      <p class="lead text-muted">The magic begins here. We help you uncover your dream destination</p>
+      <p>
+        <a href="/main/new" class="btn btn-danger my-2"><strong>Add a new item</strong></a>
+      </p>
+
+    </div>
+</section>
+
+  <div class="row text-center" id="productgrid">
+  <% products.forEach(function(products) { %>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-2">
+      <div class="card mb-4 shadow-sm">
+          <img src="<%= products.image %>" class="card-img-top">
+          <div class="card-body">
+            <h6 class="card-title"><%= products.name %></h6>
+            <p><a href="/main/<%= products._id %>" class="btn btn-info btn-sm">More Info</a></p>
+          </div>
+      </div>
+             
+    </div>
+  <% }); %>
+  </div>
+  </div>
+<% include partials/footer %>

@@ -1,0 +1,31 @@
+#content{
+  text-align: center;
+  padding-top: 20%;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px  rgba(0, 0, 0, 0.1), 0px 18px 23px  rgba(0, 0, 0, 0.1);
+}
+
+html{
+  height: 100%;
+}
+body{
+  background: url(https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+h3{
+  font-family: 'ZCOOL KuaiLe', cursive;
+}
+
+h1{
+  font-weight: 700;
+  font-size: 5em;
+  font-family: 'Pacifico', cursive;
+}
+
+hr{
+  width: 400px;
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+}
